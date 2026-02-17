@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { io } from "socket.io-client";
-
+const API_URL=import.meta.env.VITE_API_URL;
 export function useSocket() {
-  const [socket] = useState(() => io("http://localhost:4000"));
+  const [socket] = useState(() => io(API_URL));
   const [tasks, setTasks] = useState([]);
   const [loading, setLoading] = useState(true);
 
